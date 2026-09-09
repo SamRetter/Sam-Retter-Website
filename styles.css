@@ -1,17 +1,13 @@
 :root {
   --background: #f1ede4;
   --text: #1e1e1b;
-  --muted: #68665f;
-  --accent: #9a7440;
+  --muted: #59574f;
+  --accent: #795a30;
   --line: rgba(30, 30, 27, 0.18);
-
   --width: 1320px;
 }
 
-
-/* ----------------------------------------
-   Base
------------------------------------------ */
+/* Base */
 
 * {
   box-sizing: border-box;
@@ -23,13 +19,10 @@ html {
 
 body {
   margin: 0;
-
   background: var(--background);
   color: var(--text);
-
   font-family: "DM Sans", sans-serif;
-  font-weight: 300;
-
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -38,82 +31,116 @@ a {
   text-decoration: none;
 }
 
+a:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 5px;
+}
+
 nav,
 main {
   width: min(calc(100% - 80px), var(--width));
-  margin: 0 auto;
+  margin-inline: auto;
 }
 
 section {
-  padding: 140px 0;
+  padding: 100px 0;
+  scroll-margin-top: 24px;
 }
 
-
-/* ----------------------------------------
-   Navigation
------------------------------------------ */
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  padding: 30px 0;
-
-  font-size: 0.9rem;
+h1,
+h2,
+h3 {
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
 }
-
-nav div {
-  display: flex;
-  gap: 32px;
-}
-
-nav a {
-  transition: opacity 180ms ease;
-}
-
-nav a:hover {
-  opacity: 0.55;
-}
-
-.name {
-  font-weight: 500;
-}
-
-
-/* ----------------------------------------
-   Shared typography
------------------------------------------ */
 
 h1,
 h2 {
-  font-family: "Instrument Serif", serif;
-  font-weight: 400;
+  text-wrap: balance;
 }
 
 .eyebrow,
 .section-label {
   color: var(--accent);
-
   font-size: 0.75rem;
   font-weight: 500;
+  line-height: 1.5;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
+.section-label {
+  margin: 0 0 28px;
+}
 
-/* ----------------------------------------
-   Hero
------------------------------------------ */
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 20px;
+  z-index: 100;
+  padding: 12px 16px;
+  background: var(--text);
+  color: var(--background);
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+/* Navigation */
+
+nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 18px 0;
+  font-size: 0.9rem;
+}
+
+nav a,
+.mobile-menu summary {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.name {
+  flex-shrink: 0;
+  font-weight: 500;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-left: auto;
+}
+
+.nav-contact {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+/* Hero */
 
 .hero {
-  min-height: calc(100vh - 90px);
-
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  padding: 8vh 0 14vh;
+  min-height: min(680px, 74svh);
+  padding: 72px 0 84px;
 }
 
 .eyebrow {
@@ -122,38 +149,41 @@ h2 {
 
 h1 {
   max-width: 1100px;
-
   margin: 0;
-
   font-size: clamp(4rem, 7.2vw, 7.8rem);
-  line-height: 0.88;
+  line-height: 0.96;
   letter-spacing: -0.025em;
 }
 
+.hero-support {
+  width: calc(50% - 24px);
+  max-width: 56ch;
+  margin: 40px 0 0 calc(50% + 24px);
+}
+
 .intro {
-  max-width: 570px;
-
-  margin: 58px 8% 0 auto;
-
+  margin: 0;
   color: var(--muted);
-
   font-size: 1.15rem;
-  line-height: 1.55;
+  line-height: 1.65;
 }
 
-
-/* ----------------------------------------
-   Section labels
------------------------------------------ */
-
-.section-label {
-  margin: 0 0 40px;
+.hero-contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  margin-top: 16px;
+  font-size: 0.95rem;
+  text-decoration: underline;
+  text-underline-offset: 5px;
 }
 
+.hero-contact:hover {
+  color: var(--accent);
+}
 
-/* ----------------------------------------
-   Approach
------------------------------------------ */
+/* Approach */
 
 .approach {
   border-top: 1px solid var(--line);
@@ -161,29 +191,22 @@ h1 {
 
 .approach h2 {
   max-width: 900px;
-
   margin: 0;
-
-  font-size: clamp(3rem, 5.5vw, 6rem);
-  line-height: 0.95;
+  font-size: clamp(2.75rem, 4.8vw, 4.75rem);
+  line-height: 1.03;
   letter-spacing: -0.02em;
 }
 
 .approach-copy {
-  max-width: 620px;
-
-  margin: 72px 0 0 auto;
-
+  width: calc(50% - 24px);
+  max-width: 56ch;
+  margin: 44px 0 0 calc(50% + 24px);
   color: var(--muted);
-
   font-size: 1.15rem;
   line-height: 1.65;
 }
 
-
-/* ----------------------------------------
-   Work
------------------------------------------ */
+/* Work */
 
 .work {
   border-top: 1px solid var(--line);
@@ -192,275 +215,314 @@ h1 {
 .work-heading {
   display: grid;
   grid-template-columns: 1fr 2fr;
+  gap: 32px;
+  margin-bottom: 48px;
+}
 
-  margin-bottom: 90px;
+.work-heading .section-label {
+  margin: 0;
 }
 
 .work-heading h2 {
   margin: 0;
-
-  font-size: clamp(3rem, 5vw, 5.5rem);
-  line-height: 0.95;
-}
-
-.work-list {
-  border-bottom: 1px solid var(--line);
+  font-size: clamp(2.75rem, 4.4vw, 4.5rem);
+  line-height: 1.03;
+  letter-spacing: -0.015em;
 }
 
 .work-row {
   display: grid;
-  grid-template-columns: 80px 0.85fr 1.15fr;
-  gap: 40px;
-
-  padding: 38px 0;
-
+  grid-template-columns: 48px minmax(0, 1fr) minmax(0, 1fr);
+  gap: 28px;
+  padding: 30px 0;
   border-top: 1px solid var(--line);
-
-  transition: padding-left 180ms ease;
-}
-
-.work-row:hover {
-  padding-left: 10px;
 }
 
 .work-number {
+  padding-top: 6px;
   color: var(--accent);
-
   font-size: 0.75rem;
+  font-weight: 500;
   letter-spacing: 0.1em;
 }
 
 .work-row h3 {
   margin: 0;
-
-  font-family: "Instrument Serif", serif;
   font-size: 2rem;
-  font-weight: 400;
-  line-height: 1.05;
+  line-height: 1.12;
 }
 
 .work-row p {
-  max-width: 460px;
-
+  max-width: 56ch;
   margin: 0;
-
   color: var(--muted);
-
   line-height: 1.6;
 }
 
-
-/* ----------------------------------------
-   UK ↔ New Zealand
------------------------------------------ */
+/* UK / New Zealand */
 
 .nz-uk {
+  padding: 76px 0;
   border-top: 1px solid var(--line);
 }
 
 .nz-uk-grid {
   display: grid;
-  grid-template-columns: 1.5fr 0.8fr;
-  gap: 140px;
-
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 48px;
   align-items: start;
 }
 
 .nz-uk h2 {
-  max-width: 760px;
-
+  max-width: 620px;
   margin: 0;
-
-  font-size: clamp(3.5rem, 6vw, 6.5rem);
-  line-height: 0.92;
+  font-size: clamp(2.5rem, 3.8vw, 3.75rem);
+  line-height: 1.04;
   letter-spacing: -0.015em;
 }
 
-.nz-uk p:last-child {
-  margin: 120px 0 0;
-
+.nz-uk-grid > p {
+  max-width: 56ch;
+  margin: 0;
   color: var(--muted);
-
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   line-height: 1.65;
 }
 
-
-/* ----------------------------------------
-   Contact
------------------------------------------ */
+/* Contact */
 
 .contact {
-  min-height: 80vh;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
+  padding: 100px 0;
   border-top: 1px solid var(--line);
 }
 
 .contact h2 {
-  max-width: 1000px;
-
+  max-width: 900px;
   margin: 0;
-
-  font-size: clamp(4rem, 8vw, 8rem);
-  line-height: 0.9;
+  font-size: clamp(3.5rem, 6.5vw, 6.5rem);
+  line-height: 0.98;
   letter-spacing: -0.02em;
 }
 
 .contact-bottom {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-
-  margin-top: 80px;
+  grid-template-columns: minmax(0, 560px);
+  gap: 24px;
+  margin-top: 40px;
 }
 
 .contact-bottom p {
-  max-width: 540px;
-
+  max-width: 56ch;
   margin: 0;
-
   color: var(--muted);
-
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
-.contact-bottom a {
-  align-self: end;
-  justify-self: end;
-
-  padding-bottom: 8px;
-
+.email-link {
+  display: inline-flex;
+  align-items: baseline;
+  justify-self: start;
+  gap: 10px;
+  max-width: 100%;
+  min-height: 44px;
+  padding: 8px 0;
   border-bottom: 1px solid var(--text);
-
   font-family: "Instrument Serif", serif;
-  font-size: 1.6rem;
-  line-height: 1;
+  font-size: 1.75rem;
+  line-height: 1.2;
 }
 
-.contact-bottom a span {
-  display: inline-block;
+.email-address {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
 
-  margin-left: 4px;
-
+.email-arrow {
+  flex-shrink: 0;
   transition: transform 180ms ease;
 }
 
-.contact-bottom a:hover span {
-  transform: translate(4px, -4px);
+.email-link:hover .email-arrow {
+  transform: translate(3px, -3px);
 }
 
-
-/* ----------------------------------------
-   Tablet / Mobile
------------------------------------------ */
+/* Mobile */
 
 @media (max-width: 700px) {
-
   nav,
   main {
     width: calc(100% - 40px);
   }
 
-  nav div {
-    gap: 14px;
+  nav {
+    gap: 16px;
+    padding: 12px 0;
+  }
 
-    font-size: 0.78rem;
+  .nav-links {
+    display: none;
+  }
+
+  .nav-contact {
+    margin-left: auto;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+
+  .mobile-menu summary {
+    gap: 6px;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .mobile-menu summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .mobile-menu summary::after {
+    content: "+";
+  }
+
+  .mobile-menu[open] summary::after {
+    content: "−";
+  }
+
+  .mobile-menu ul {
+    position: absolute;
+    top: calc(100% - 4px);
+    right: 0;
+    z-index: 10;
+    width: min(240px, 100%);
+    margin: 0;
+    padding: 12px 16px;
+    list-style: none;
+    background: var(--background);
+    border: 1px solid var(--line);
+    box-shadow: 0 8px 20px rgb(30 30 27 / 8%);
+  }
+
+  .mobile-menu li a {
+    display: flex;
+    width: 100%;
+    min-height: 44px;
   }
 
   section {
-    padding: 90px 0;
+    padding: 64px 0;
   }
 
-
-  /* Hero */
-
   .hero {
-    min-height: 85vh;
+    min-height: auto;
+    padding: 52px 0 64px;
+  }
 
-    padding: 7vh 0 10vh;
+  .eyebrow {
+    margin-bottom: 28px;
   }
 
   h1 {
-    font-size: clamp(3.8rem, 16vw, 5.8rem);
-    line-height: 0.9;
+    font-size: clamp(3rem, 15vw, 3.625rem);
+    line-height: 1;
   }
 
-  .intro {
-    margin: 42px 0 0;
+  .hero-support {
+    width: 100%;
+    max-width: 56ch;
+    margin: 30px 0 0;
   }
 
+  .intro,
+  .approach-copy {
+    font-size: 1.0625rem;
+    line-height: 1.65;
+  }
 
-  /* Approach */
+  .hero-contact {
+    margin-top: 12px;
+  }
+
+  .approach h2,
+  .work-heading h2 {
+    font-size: clamp(2.375rem, 10.5vw, 2.75rem);
+    line-height: 1.05;
+  }
 
   .approach-copy {
-    margin: 50px 0 0;
+    width: 100%;
+    margin: 30px 0 0;
   }
 
-
-  /* Work */
-
   .work-heading,
-  .nz-uk-grid,
-  .contact-bottom {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  .nz-uk-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
   }
 
   .work-heading {
-    margin-bottom: 60px;
+    margin-bottom: 32px;
   }
 
   .work-row {
-    grid-template-columns: 40px 1fr;
-    gap: 20px;
-
-    padding: 30px 0;
+    grid-template-columns: 24px minmax(0, 1fr);
+    gap: 14px;
+    padding: 26px 0;
   }
 
-  .work-row:hover {
-    padding-left: 0;
+  .work-row h3 {
+    font-size: 1.875rem;
   }
 
   .work-row p {
     grid-column: 2;
   }
 
-
-  /* UK ↔ NZ */
-
-  .nz-uk p:last-child {
-    margin: 10px 0 0;
+  .nz-uk {
+    padding: 60px 0;
   }
 
+  .nz-uk h2 {
+    font-size: clamp(2.375rem, 10vw, 2.75rem);
+    line-height: 1.05;
+  }
 
-  /* Contact */
+  .nz-uk-grid > p {
+    font-size: 1.0625rem;
+  }
 
   .contact {
-    min-height: auto;
+    padding: 64px 0;
+  }
+
+  .contact h2 {
+    font-size: clamp(2.75rem, 12vw, 3.5rem);
+    line-height: 1.02;
   }
 
   .contact-bottom {
-    margin-top: 60px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+    margin-top: 30px;
   }
 
-  .contact-bottom a {
-    justify-self: start;
+  .email-link {
+    font-size: clamp(1.25rem, 6.2vw, 1.75rem);
   }
 }
 
+/* Reduced motion */
 
-/* ----------------------------------------
-   Small mobile
------------------------------------------ */
-
-@media (max-width: 520px) {
-
-  nav div {
-    display: none;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 
+  .email-arrow {
+    transition: none;
+  }
+
+  .email-link:hover .email-arrow {
+    transform: none;
+  }
 }

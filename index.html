@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Sam Retter — Film Finance & Commercial Strategy</title>
+
+  <meta
+    name="description"
+    content="Producer-side finance and commercial strategy for independent film and television. UK-based, New Zealand connected."
+  >
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,54 +20,67 @@
   >
 
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 
-<body>
+<body id="top">
+  <a href="#main" class="skip-link">Skip to content</a>
 
   <header>
-    <nav>
-      <a href="#" class="name">Sam Retter</a>
+    <nav aria-label="Main navigation">
+      <a href="#top" class="name">Sam Retter</a>
 
-      <div>
+      <div class="nav-links">
         <a href="#approach">Approach</a>
         <a href="#work">Work</a>
         <a href="#nz-uk">UK ↔ NZ</a>
-        <a href="#contact">Contact</a>
       </div>
+
+      <a href="#contact" class="nav-contact">Contact</a>
+
+      <details class="mobile-menu">
+        <summary>Menu</summary>
+
+        <ul>
+          <li><a href="#approach">Approach</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#nz-uk">UK ↔ NZ</a></li>
+        </ul>
+      </details>
     </nav>
   </header>
 
-  <main>
-
-    <section class="hero">
-
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
       <p class="eyebrow">
         UK-based · New Zealand connected
       </p>
 
-      <h1>
-        Finance & commercial strategy
-        for independent film
-        & television.
+      <h1 id="hero-title">
+        Finance &amp; commercial strategy for independent film &amp; television.
       </h1>
 
-      <p class="intro">
-        Producer-side support from development through financing,
-        production and the life of the project.
-      </p>
+      <div class="hero-support">
+        <p class="intro">
+          Producer-side support from development through financing,
+          production and the life of the project.
+        </p>
 
+        <a href="#contact" class="hero-contact">
+          Get in touch <span aria-hidden="true">↗</span>
+        </a>
+      </div>
     </section>
 
+    <section
+      id="approach"
+      class="approach"
+      aria-labelledby="approach-title"
+    >
+      <p class="section-label">The approach</p>
 
-    <section id="approach" class="approach">
-
-      <p class="section-label">
-        The approach
-      </p>
-
-      <h2>
-        Good projects get complicated
-        long before the cameras roll.
+      <h2 id="approach-title">
+        Good projects get complicated long before the cameras roll.
       </h2>
 
       <p class="approach-copy">
@@ -72,109 +89,66 @@
         from development economics and financing decisions through to the longer
         life of the project.
       </p>
-
     </section>
 
-
-    <section id="work" class="work">
-
+    <section id="work" class="work" aria-labelledby="work-title">
       <div class="work-heading">
+        <p class="section-label">The work</p>
 
-        <p class="section-label">
-          The work
-        </p>
-
-        <h2>
+        <h2 id="work-title">
           Across the life of a project.
         </h2>
-
       </div>
 
       <div class="work-list">
-
         <article class="work-row">
+          <span class="work-number" aria-hidden="true">01</span>
 
-          <span class="work-number">
-            01
-          </span>
-
-          <h3>
-            Develop & decide
-          </h3>
+          <h3>Develop &amp; decide</h3>
 
           <p>
             Project economics, modelling, finance plans and commercial scenarios.
           </p>
-
         </article>
 
-
         <article class="work-row">
+          <span class="work-number" aria-hidden="true">02</span>
 
-          <span class="work-number">
-            02
-          </span>
-
-          <h3>
-            Finance & produce
-          </h3>
+          <h3>Finance &amp; produce</h3>
 
           <p>
             Cashflow, financing structures, funding flows and financial oversight.
           </p>
-
         </article>
 
-
         <article class="work-row">
+          <span class="work-number" aria-hidden="true">03</span>
 
-          <span class="work-number">
-            03
-          </span>
-
-          <h3>
-            Keep the project together
-          </h3>
+          <h3>Keep the project together</h3>
 
           <p>
             Adviser coordination, reporting, incentives, audits and SPV stewardship.
           </p>
-
         </article>
 
-
         <article class="work-row">
+          <span class="work-number" aria-hidden="true">04</span>
 
-          <span class="work-number">
-            04
-          </span>
-
-          <h3>
-            Build the company around it
-          </h3>
+          <h3>Build the company around it</h3>
 
           <p>
             Slate forecasting, company finance and strategic support.
           </p>
-
         </article>
-
       </div>
-
     </section>
 
-
-    <section id="nz-uk" class="nz-uk">
-
-      <p class="section-label">
-        UK ↔ New Zealand
-      </p>
+    <section id="nz-uk" class="nz-uk" aria-labelledby="nz-uk-title">
+      <p class="section-label">UK ↔ New Zealand</p>
 
       <div class="nz-uk-grid">
-
-        <h2>
-          Local projects.
-          International possibilities.
+        <h2 id="nz-uk-title">
+          Local projects. International possibilities.
         </h2>
 
         <p>
@@ -182,43 +156,29 @@
           while maintaining strong ties to New Zealand and a particular interest
           in projects moving between the two markets.
         </p>
-
       </div>
-
     </section>
 
+    <section id="contact" class="contact" aria-labelledby="contact-title">
+      <p class="section-label">Get in touch</p>
 
-    <section id="contact" class="contact">
-
-      <p class="section-label">
-        Get in touch
-      </p>
-
-      <h2>
+      <h2 id="contact-title">
         Have something interesting?
       </h2>
 
       <div class="contact-bottom">
-
         <p>
           If you're developing a project, building an independent production
           company, or simply think there might be something worth talking about,
           I'd like to hear from you.
         </p>
 
-        <a href="mailto:YOUR-EMAIL">
-          YOUR-EMAIL
-          <span>↗</span>
+        <a class="email-link" href="mailto:samuel.retter@hotmail.com">
+          <span class="email-address">samuel.retter@hotmail.com</span>
+          <span class="email-arrow" aria-hidden="true">↗</span>
         </a>
-
       </div>
-
     </section>
-
   </main>
-
-  <script src="script.js"></script>
-
 </body>
-
 </html>
