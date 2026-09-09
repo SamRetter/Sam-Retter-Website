@@ -109,3 +109,230 @@ h1 {
   font-size: 1.15rem;
   line-height: 1.55;
 }
+
+section {
+  padding: 140px 0;
+}
+
+.section-label {
+  margin: 0 0 40px;
+
+  color: var(--accent);
+
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.approach {
+  border-top: 1px solid var(--line);
+}
+
+.approach h2 {
+  max-width: 900px;
+
+  margin: 0;
+
+  font-family: "Instrument Serif", serif;
+  font-size: clamp(3rem, 5.5vw, 6rem);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+
+.approach-copy {
+  max-width: 620px;
+
+  margin: 60px 0 0 auto;
+
+  color: var(--muted);
+
+  font-size: 1.15rem;
+  line-height: 1.65;
+}
+.work {
+  border-top: 1px solid var(--line);
+}
+
+.work-heading {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+
+  margin-bottom: 90px;
+}
+
+.work-heading h2 {
+  margin: 0;
+
+  font-family: "Instrument Serif", serif;
+  font-size: clamp(3rem, 5vw, 5.5rem);
+  font-weight: 400;
+  line-height: 0.95;
+}
+
+.work-list {
+  border-bottom: 1px solid var(--line);
+}
+
+.work-row {
+  display: grid;
+  grid-template-columns: 80px 1fr 1fr;
+  gap: 40px;
+
+  padding: 38px 0;
+
+  border-top: 1px solid var(--line);
+}
+
+.work-number {
+  color: var(--accent);
+
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+}
+
+.work-row h3 {
+  margin: 0;
+
+  font-family: "Instrument Serif", serif;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.work-row p {
+  max-width: 430px;
+
+  margin: 0;
+
+  color: var(--muted);
+
+  line-height: 1.6;
+}
+
+.nz-uk {
+  border-top: 1px solid var(--line);
+}
+
+.nz-uk-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 100px;
+
+  align-items: end;
+}
+
+.nz-uk h2 {
+  max-width: 760px;
+
+  margin: 0;
+
+  font-family: "Instrument Serif", serif;
+  font-size: clamp(3.5rem, 6vw, 6.5rem);
+  font-weight: 400;
+  line-height: 0.92;
+}
+
+.nz-uk p:last-child {
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 1.1rem;
+  line-height: 1.65;
+}
+
+.contact {
+  min-height: 80vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  border-top: 1px solid var(--line);
+}
+
+.contact h2 {
+  max-width: 1000px;
+
+  margin: 0;
+
+  font-family: "Instrument Serif", serif;
+  font-size: clamp(4rem, 8vw, 8rem);
+  font-weight: 400;
+  line-height: 0.9;
+}
+
+.contact-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+
+  margin-top: 80px;
+}
+
+.contact-bottom p {
+  max-width: 540px;
+
+  margin: 0;
+
+  color: var(--muted);
+
+  line-height: 1.6;
+}
+
+.contact-bottom a {
+  align-self: end;
+  justify-self: end;
+
+  padding-bottom: 5px;
+
+  border-bottom: 1px solid var(--text);
+
+  font-size: 1.1rem;
+}
+
+@media (max-width: 700px) {
+
+  nav,
+  main {
+    width: calc(100% - 40px);
+  }
+
+  nav div {
+    gap: 14px;
+    font-size: 0.78rem;
+  }
+
+  section {
+    padding: 90px 0;
+  }
+
+  .hero {
+    min-height: 85vh;
+  }
+
+  .work-heading,
+  .nz-uk-grid,
+  .contact-bottom {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .work-row {
+    grid-template-columns: 40px 1fr;
+    gap: 20px;
+  }
+
+  .work-row p {
+    grid-column: 2;
+  }
+
+  .approach-copy {
+    margin-left: 0;
+  }
+
+  .contact-bottom a {
+    justify-self: start;
+  }
+}
