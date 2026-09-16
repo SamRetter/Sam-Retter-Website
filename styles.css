@@ -38,7 +38,8 @@ summary:focus-visible {
 }
 
 nav,
-main {
+main,
+.footer-inner {
   width: min(calc(100% - 80px), var(--width));
   margin-inline: auto;
 }
@@ -110,6 +111,7 @@ nav a,
 .name {
   flex-shrink: 0;
   font-weight: 500;
+  letter-spacing: -0.01em;
 }
 
 .nav-links {
@@ -148,7 +150,7 @@ nav a:hover {
 }
 
 h1 {
-  max-width: 1100px;
+  max-width: 1160px;
   margin: 0;
   font-size: clamp(4rem, 7.2vw, 7.8rem);
   line-height: 0.96;
@@ -157,7 +159,7 @@ h1 {
 
 .hero-support {
   width: calc(50% - 24px);
-  max-width: 56ch;
+  max-width: 58ch;
   margin: 40px 0 0 calc(50% + 24px);
 }
 
@@ -183,6 +185,27 @@ h1 {
   color: var(--accent);
 }
 
+.hero-image {
+  margin: 0 0 18px;
+}
+
+.hero-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.hero-image figcaption {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
 /* Approach */
 
 .approach {
@@ -199,7 +222,7 @@ h1 {
 
 .approach-copy {
   width: calc(50% - 24px);
-  max-width: 56ch;
+  max-width: 58ch;
   margin: 44px 0 0 calc(50% + 24px);
   color: var(--muted);
   font-size: 1.15rem;
@@ -253,7 +276,7 @@ h1 {
 }
 
 .work-row p {
-  max-width: 56ch;
+  max-width: 58ch;
   margin: 0;
   color: var(--muted);
   line-height: 1.6;
@@ -262,7 +285,7 @@ h1 {
 /* UK / New Zealand */
 
 .nz-uk {
-  padding: 76px 0;
+  padding: 90px 0;
   border-top: 1px solid var(--line);
 }
 
@@ -282,7 +305,7 @@ h1 {
 }
 
 .nz-uk-grid > p {
-  max-width: 56ch;
+  max-width: 58ch;
   margin: 0;
   color: var(--muted);
   font-size: 1.15rem;
@@ -306,16 +329,27 @@ h1 {
 
 .contact-bottom {
   display: grid;
-  grid-template-columns: minmax(0, 560px);
-  gap: 24px;
+  grid-template-columns: minmax(0, 560px) minmax(0, 1fr);
+  gap: 64px;
+  align-items: end;
   margin-top: 40px;
 }
 
-.contact-bottom p {
+.contact-bottom > p {
   max-width: 56ch;
   margin: 0;
   color: var(--muted);
   line-height: 1.65;
+}
+
+.contact-details {
+  min-width: 0;
+}
+
+.founder-line {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 0.85rem;
 }
 
 .email-link {
@@ -328,7 +362,7 @@ h1 {
   padding: 8px 0;
   border-bottom: 1px solid var(--text);
   font-family: "Instrument Serif", serif;
-  font-size: 1.75rem;
+  font-size: clamp(1.45rem, 2.2vw, 2rem);
   line-height: 1.2;
 }
 
@@ -346,11 +380,32 @@ h1 {
   transform: translate(3px, -3px);
 }
 
+/* Footer */
+
+.site-footer {
+  border-top: 1px solid var(--line);
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 24px;
+  padding: 24px 0 30px;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.footer-inner a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
 /* Mobile */
 
 @media (max-width: 700px) {
   nav,
-  main {
+  main,
+  .footer-inner {
     width: calc(100% - 40px);
   }
 
@@ -433,6 +488,20 @@ h1 {
     margin: 30px 0 0;
   }
 
+  .hero-image {
+    margin-bottom: 0;
+  }
+
+  .hero-image img {
+    aspect-ratio: 4 / 3;
+    object-position: 58% center;
+  }
+
+  .hero-image figcaption {
+    margin-top: 10px;
+    font-size: 0.7rem;
+  }
+
   .intro,
   .approach-copy {
     font-size: 1.0625rem;
@@ -455,7 +524,8 @@ h1 {
   }
 
   .work-heading,
-  .nz-uk-grid {
+  .nz-uk-grid,
+  .contact-bottom {
     grid-template-columns: minmax(0, 1fr);
     gap: 24px;
   }
@@ -501,13 +571,17 @@ h1 {
   }
 
   .contact-bottom {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 24px;
     margin-top: 30px;
   }
 
   .email-link {
-    font-size: clamp(1.25rem, 6.2vw, 1.75rem);
+    font-size: clamp(1.2rem, 5.8vw, 1.65rem);
+  }
+
+  .footer-inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+    padding: 20px 0 24px;
   }
 }
 
