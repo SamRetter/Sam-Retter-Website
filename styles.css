@@ -33,19 +33,19 @@ a {
 
 a:focus-visible,
 summary:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid currentColor;
   outline-offset: 5px;
 }
 
 nav,
-main,
-.footer-inner {
+.content-section,
+.footer-inner,
+.hero-inner {
   width: min(calc(100% - 80px), var(--width));
   margin-inline: auto;
 }
 
 section {
-  padding: 100px 0;
   scroll-margin-top: 24px;
 }
 
@@ -63,7 +63,6 @@ h2 {
 
 .eyebrow,
 .section-label {
-  color: var(--accent);
   font-size: 0.75rem;
   font-weight: 500;
   line-height: 1.5;
@@ -73,6 +72,7 @@ h2 {
 
 .section-label {
   margin: 0 0 28px;
+  color: var(--accent);
 }
 
 .skip-link {
@@ -81,8 +81,8 @@ h2 {
   left: 20px;
   z-index: 100;
   padding: 12px 16px;
-  background: var(--text);
-  color: var(--background);
+  background: var(--background);
+  color: var(--text);
   transform: translateY(-200%);
 }
 
@@ -92,12 +92,19 @@ h2 {
 
 /* Navigation */
 
+.site-header {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 20;
+  color: #fffaf0;
+}
+
 nav {
   position: relative;
   display: flex;
   align-items: center;
   gap: 28px;
-  padding: 18px 0;
+  padding: 20px 0;
   font-size: 0.9rem;
 }
 
@@ -138,36 +145,68 @@ nav a:hover {
 /* Hero */
 
 .hero {
+  position: relative;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: min(680px, 74svh);
-  padding: 72px 0 84px;
+  min-height: 100svh;
+  overflow: hidden;
+  color: #fffaf0;
+  background: #1b292b;
 }
 
-.eyebrow {
-  margin: 0 0 34px;
+.hero-media,
+.hero-shade {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% center;
+}
+
+.hero-shade {
+  background:
+    linear-gradient(90deg, rgba(8, 15, 17, 0.72) 0%, rgba(8, 15, 17, 0.46) 40%, rgba(8, 15, 17, 0.14) 72%, rgba(8, 15, 17, 0.03) 100%),
+    linear-gradient(0deg, rgba(8, 15, 17, 0.52) 0%, rgba(8, 15, 17, 0.05) 54%, rgba(8, 15, 17, 0.18) 100%);
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 154px 0 84px;
+}
+
+.hero .eyebrow {
+  max-width: 760px;
+  margin: 0 0 28px;
+  color: rgba(255, 250, 240, 0.82);
 }
 
 h1 {
-  max-width: 1160px;
+  max-width: 1050px;
   margin: 0;
-  font-size: clamp(4rem, 7.2vw, 7.8rem);
-  line-height: 0.96;
-  letter-spacing: -0.025em;
+  font-size: clamp(4.5rem, 7.6vw, 8.5rem);
+  line-height: 0.91;
+  letter-spacing: -0.03em;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.16);
 }
 
 .hero-support {
-  width: calc(50% - 24px);
-  max-width: 58ch;
-  margin: 40px 0 0 calc(50% + 24px);
+  width: min(560px, 44%);
+  margin: 34px 0 0 auto;
 }
 
 .intro {
   margin: 0;
-  color: var(--muted);
-  font-size: 1.15rem;
-  line-height: 1.65;
+  color: rgba(255, 250, 240, 0.84);
+  font-size: 1.08rem;
+  line-height: 1.62;
 }
 
 .hero-contact {
@@ -182,28 +221,26 @@ h1 {
 }
 
 .hero-contact:hover {
-  color: var(--accent);
+  color: #fff;
 }
 
-.hero-image {
-  margin: 0 0 18px;
-}
-
-.hero-image img {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-}
-
-.hero-image figcaption {
-  margin-top: 12px;
-  color: var(--muted);
-  font-size: 0.76rem;
+.hero-caption {
+  position: absolute;
+  right: 40px;
+  bottom: 24px;
+  z-index: 2;
+  margin: 0;
+  color: rgba(255, 250, 240, 0.72);
+  font-size: 0.7rem;
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+}
+
+/* Content sections */
+
+.content-section {
+  padding: 100px 0;
 }
 
 /* Approach */
@@ -285,7 +322,6 @@ h1 {
 /* UK / New Zealand */
 
 .nz-uk {
-  padding: 90px 0;
   border-top: 1px solid var(--line);
 }
 
@@ -315,7 +351,6 @@ h1 {
 /* Contact */
 
 .contact {
-  padding: 100px 0;
   border-top: 1px solid var(--line);
 }
 
@@ -404,8 +439,9 @@ h1 {
 
 @media (max-width: 700px) {
   nav,
-  main,
-  .footer-inner {
+  .content-section,
+  .footer-inner,
+  .hero-inner {
     width: calc(100% - 40px);
   }
 
@@ -453,6 +489,7 @@ h1 {
     margin: 0;
     padding: 12px 16px;
     list-style: none;
+    color: var(--text);
     background: var(--background);
     border: 1px solid var(--line);
     box-shadow: 0 8px 20px rgb(30 30 27 / 8%);
@@ -464,52 +501,56 @@ h1 {
     min-height: 44px;
   }
 
-  section {
-    padding: 64px 0;
-  }
-
   .hero {
-    min-height: auto;
-    padding: 52px 0 64px;
+    min-height: 100svh;
   }
 
-  .eyebrow {
-    margin-bottom: 28px;
+  .hero-media img {
+    object-position: 58% center;
+  }
+
+  .hero-shade {
+    background:
+      linear-gradient(0deg, rgba(8, 15, 17, 0.78) 0%, rgba(8, 15, 17, 0.42) 52%, rgba(8, 15, 17, 0.18) 100%),
+      linear-gradient(90deg, rgba(8, 15, 17, 0.32) 0%, rgba(8, 15, 17, 0.06) 100%);
+  }
+
+  .hero-inner {
+    justify-content: flex-end;
+    padding: 124px 0 72px;
+  }
+
+  .hero .eyebrow {
+    margin-bottom: 22px;
+    font-size: 0.68rem;
   }
 
   h1 {
-    font-size: clamp(3rem, 15vw, 3.625rem);
-    line-height: 1;
+    max-width: 12ch;
+    font-size: clamp(3.4rem, 15vw, 5rem);
+    line-height: 0.94;
   }
 
   .hero-support {
     width: 100%;
-    max-width: 56ch;
-    margin: 30px 0 0;
+    max-width: 32rem;
+    margin: 28px 0 0;
   }
 
-  .hero-image {
-    margin-bottom: 0;
+  .intro {
+    max-width: 30rem;
+    font-size: 1rem;
+    line-height: 1.55;
   }
 
-  .hero-image img {
-    aspect-ratio: 4 / 3;
-    object-position: 58% center;
+  .hero-caption {
+    right: 20px;
+    bottom: 18px;
+    font-size: 0.62rem;
   }
 
-  .hero-image figcaption {
-    margin-top: 10px;
-    font-size: 0.7rem;
-  }
-
-  .intro,
-  .approach-copy {
-    font-size: 1.0625rem;
-    line-height: 1.65;
-  }
-
-  .hero-contact {
-    margin-top: 12px;
+  .content-section {
+    padding: 64px 0;
   }
 
   .approach h2,
@@ -521,6 +562,8 @@ h1 {
   .approach-copy {
     width: 100%;
     margin: 30px 0 0;
+    font-size: 1.0625rem;
+    line-height: 1.65;
   }
 
   .work-heading,
@@ -548,10 +591,6 @@ h1 {
     grid-column: 2;
   }
 
-  .nz-uk {
-    padding: 60px 0;
-  }
-
   .nz-uk h2 {
     font-size: clamp(2.375rem, 10vw, 2.75rem);
     line-height: 1.05;
@@ -559,10 +598,6 @@ h1 {
 
   .nz-uk-grid > p {
     font-size: 1.0625rem;
-  }
-
-  .contact {
-    padding: 64px 0;
   }
 
   .contact h2 {

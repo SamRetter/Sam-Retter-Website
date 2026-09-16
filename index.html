@@ -125,7 +125,7 @@
 <body id="top">
   <a href="#main" class="skip-link">Skip to content</a>
 
-  <header>
+  <header class="site-header">
     <nav aria-label="Main navigation">
       <a href="#top" class="name" aria-label="Heartwood Pictures home">
         Heartwood Pictures
@@ -153,43 +153,45 @@
 
   <main id="main">
     <section class="hero" aria-labelledby="hero-title">
-      <p class="eyebrow">
-        Heartwood Pictures · UK-based · New Zealand connected
-      </p>
+      <div class="hero-media" aria-hidden="true">
+        <img
+          src="heartwood-coast.webp"
+          alt=""
+          width="1672"
+          height="941"
+          loading="eager"
+          fetchpriority="high"
+        >
+      </div>
+      <div class="hero-shade" aria-hidden="true"></div>
 
-      <h1 id="hero-title">
-        Project finance &amp; commercial strategy for independent film &amp; television.
-      </h1>
-
-      <div class="hero-support">
-        <p class="intro">
-          Producer-side support from development and greenlight through financing,
-          production and the longer life of the project.
+      <div class="hero-inner">
+        <p class="eyebrow">
+          Heartwood Pictures · UK-based · New Zealand connected
         </p>
 
-        <a href="#contact" class="hero-contact">
-          Get in touch <span aria-hidden="true">↗</span>
-        </a>
-      </div>
-    </section>
+        <h1 id="hero-title">
+          Project finance &amp; commercial strategy for independent film &amp; television.
+        </h1>
 
-    <figure class="hero-image">
-      <img
-        src="heartwood-coast.webp"
-        alt="Two people looking across a New Zealand coastline and open sea."
-        width="1672"
-        height="941"
-        loading="eager"
-        fetchpriority="high"
-      >
-      <figcaption>
-        Rooted in place. Built to travel.
-      </figcaption>
-    </figure>
+        <div class="hero-support">
+          <p class="intro">
+            Producer-side support from development and greenlight through financing,
+            production and the longer life of the project.
+          </p>
+
+          <a href="#contact" class="hero-contact">
+            Get in touch <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+
+      <p class="hero-caption">Rooted in place. Built to travel.</p>
+    </section>
 
     <section
       id="approach"
-      class="approach"
+      class="approach content-section"
       aria-labelledby="approach-title"
     >
       <p class="section-label">The approach</p>
@@ -206,7 +208,7 @@
       </p>
     </section>
 
-    <section id="work" class="work" aria-labelledby="work-title">
+    <section id="work" class="work content-section" aria-labelledby="work-title">
       <div class="work-heading">
         <p class="section-label">The work</p>
 
@@ -262,7 +264,7 @@
       </div>
     </section>
 
-    <section id="nz-uk" class="nz-uk" aria-labelledby="nz-uk-title">
+    <section id="nz-uk" class="nz-uk content-section" aria-labelledby="nz-uk-title">
       <p class="section-label">UK ↔ New Zealand</p>
 
       <div class="nz-uk-grid">
@@ -280,7 +282,7 @@
       </div>
     </section>
 
-    <section id="contact" class="contact" aria-labelledby="contact-title">
+    <section id="contact" class="contact content-section" aria-labelledby="contact-title">
       <p class="section-label">Get in touch</p>
 
       <h2 id="contact-title">
