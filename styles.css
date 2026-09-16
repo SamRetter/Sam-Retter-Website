@@ -179,19 +179,19 @@ nav a:hover {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 132px 0 72px;
+  padding: 108px 0 72px;
 }
 
 .hero .eyebrow {
   max-width: 760px;
-  margin: 0 0 28px;
+  margin: 0 0 18px;
   color: rgba(255, 250, 240, 0.82);
 }
 
 h1 {
-  max-width: 700px;
+  max-width: 610px;
   margin: 0;
-  font-size: clamp(3.3rem, 4.65vw, 5.35rem);
+  font-size: clamp(2.85rem, 3.75vw, 4.4rem);
   line-height: 0.93;
   letter-spacing: -0.03em;
   text-shadow: 0 2px 20px rgba(0, 0, 0, 0.16);
@@ -517,7 +517,7 @@ h1 {
 
   .hero-inner {
     justify-content: flex-start;
-    padding: 104px 0 72px;
+    padding: 94px 0 72px;
   }
 
   .hero .eyebrow {
@@ -526,8 +526,8 @@ h1 {
   }
 
   h1 {
-    max-width: 11ch;
-    font-size: clamp(2.7rem, 11.8vw, 3.9rem);
+    max-width: 10.5ch;
+    font-size: clamp(2.45rem, 10.6vw, 3.45rem);
     line-height: 0.95;
   }
 
