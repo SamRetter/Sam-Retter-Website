@@ -63,7 +63,7 @@ h2 {
 
 .eyebrow,
 .section-label {
-  font-size: 0.75rem;
+  font-size: 1.25rem;
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.14em;
@@ -548,7 +548,7 @@ h1 {
     margin: 18px 0 0;
   }
 
-  .intro {
+  .intro {aria-labelledby
     max-width: 30rem;
     font-size: 1rem;
     line-height: 1.55;
