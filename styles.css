@@ -537,14 +537,14 @@ h1 {
   }
 
   h1 {
-    max-width: 11ch;
-    font-size: clamp(2.2rem, 9.6vw, 3.05rem);
-    line-height: 0.95;
+    max-width: 100%;
+    font-size: clamp(1.95rem, 8.4vw, 2.7rem);
+    line-height: 0.98;
   }
 
   .hero-support {
     width: 100%;
-    max-width: 32rem;
+    max-width: 100%;
     margin: 18px 0 0;
   }
 
