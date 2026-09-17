@@ -63,7 +63,7 @@ h2 {
 
 .eyebrow,
 .section-label {
-  font-size: 1.25rem;
+  font-size: 2.00rem;
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.14em;
@@ -189,7 +189,7 @@ nav a:hover {
 }
 
 h1 {
-  max-width: 560px;
+  max-width: 100%;
   margin: 0;
   font-size: clamp(2.6rem, 3.2vw, 3.75rem);
   line-height: 1.04;
@@ -261,7 +261,7 @@ h1 {
 .approach h2 {
   max-width: 760px;
   margin: 0;
-  font-size: clamp(2.6rem, 4.15vw, 4.2rem);
+  font-size: clamp(2.375rem, 10vw, 2.75rem);
   line-height: 1.03;
   letter-spacing: -0.02em;
 }
@@ -295,7 +295,7 @@ h1 {
 .work-heading h2 {
   grid-column: 2 / -1;
   margin: 0;
-  font-size: clamp(2.75rem, 4.4vw, 4.5rem);
+  font-size: clamp(2.375rem, 10vw, 2.75rem);
   line-height: 1.03;
   letter-spacing: -0.015em;
 }
@@ -630,7 +630,7 @@ h1 {
   }
 
   .contact h2 {
-    font-size: clamp(2.75rem, 12vw, 3.5rem);
+    font-size: clamp(2.375rem, 10vw, 2.75rem);
     line-height: 1.02;
   }
 
